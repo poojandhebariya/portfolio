@@ -1,0 +1,41 @@
+.about{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-about{
+    width: 40%;
+}
+
+.left-about img{
+    margin-left: 4.5rem;
+    height: 35rem;
+    margin-top: -6.7rem;
+    width: 28.8rem;
+    z-index: 2;
+}
+
+.about-img-bg{
+    margin-left: 5rem;
+    position: absolute;
+    height: 27rem;
+    width: 25rem;
+    border-width: 20px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    border-radius: 10px;
+    z-index: -1;
+    background-color: rgb(212, 212, 212);
+}
+
+.right-about{
+    padding: 4rem;
+    width: 60%;
+}
+
+.right-about p{
+    font-size: larger;
+    text-align: justify;
+    margin-right: 2rem;
+}

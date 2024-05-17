@@ -1,0 +1,105 @@
+.Main{
+    /* background: url(../Assets/bg2.avif); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.left{
+    margin-left: 10%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.first p{
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.second p{
+    font-size: 5rem;
+    font-weight: 600;
+    background: -webkit-linear-gradient(blue,purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.third p{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.third{
+    display: flex;
+    gap: 1rem;
+}
+
+.third span{
+    font-size: 2rem;
+    font-weight: 400;
+    background: -webkit-linear-gradient(black,blue,lightblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cv-btn{
+    background: -webkit-linear-gradient(rgb(0, 0, 179),rgb(159, 169, 255));
+    color: white;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    border-radius: 3px;
+    border: none;
+    height: 2.5rem;
+    width: 12rem;
+    font-size: large;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+        scale: 1.1;
+    }
+}
+
+.cv-btn a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.right{
+    height: 35rem;
+}
+
+.photo-bg{
+    position: absolute;
+    height: 35.6rem;
+    width: 34rem;
+    top: 10rem;
+    right: 7rem;
+}
+
+.photo-div{
+    border-radius: 50%;
+    background-color: aqua;
+    height: 30rem;
+    top: -29rem;
+    right: 1.5rem;
+    width: 30rem;
+    z-index: 2;
+    position: relative;
+    background: linear-gradient(transparent,transparent,transparent,transparent,transparent,black,rgb(0, 0, 134));
+}
+
+.photo{
+    position: relative;
+    z-index: 1;
+    height: 35rem;
+    width: 33rem;
+    margin-top: 1rem;
+    right: 3rem;
+}

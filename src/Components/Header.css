@@ -1,0 +1,68 @@
+.header {
+    /* background-color: rgb(199, 199, 199);
+    border-bottom: 1px solid rgb(128, 128, 128); */
+    background-color: rgb(236, 236, 236);
+    border-bottom: 1px solid rgb(143, 143, 143);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contents {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left-header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar {
+    height: 5rem;
+    display: flex;
+    margin-left: 0;
+}
+
+.lists {
+    display: flex;
+    height: 4.9rem;
+    align-items: center;
+    font-size: 1.5rem;
+    gap: 3rem;
+    
+}
+
+.lists li {
+    box-sizing: border-box;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    position:relative;
+    padding-bottom: 2px;
+}
+
+.lists a {
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    position:relative;
+    padding-bottom: 1px;
+    box-sizing: content-box;
+}
+
+.lists li:hover {
+    cursor: pointer;
+    border-bottom: 2px solid blue;
+    padding-bottom: 1px;
+}
+
+.lists li.highlight a {
+    color: rgb(0, 0, 0);
+    border-bottom: 3px solid black;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}

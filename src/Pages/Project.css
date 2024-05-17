@@ -1,0 +1,127 @@
+.reactProjects{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.react-heading{
+    margin-left: 2rem;
+}
+
+
+.slide{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: rgb(0, 0, 0);
+    background-color: rgb(229, 229, 230);
+    border: 2px solid rgb(152, 151, 151);
+    height: 90%;
+    width: 85%;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.slider{
+    margin-left: 2.5%;
+    width: 95%;
+    margin-right: 2.5%;
+}
+
+.slide-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.slide-img{
+    height: 50%;
+    width: 50%;
+}
+
+.project-img{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid rgb(102, 102, 102);
+    height: auto;
+    width: 380px;
+    &:hover{
+        opacity: 0.7;
+        transition: all 40ms;
+    }
+}
+
+.icons{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.github-img{
+    cursor: pointer;
+    &:hover{
+        color: rgb(69, 69, 69);
+        transition: all 40ms;
+        transform: scale(1.1);
+    }
+}
+
+.linkedin-img{
+    cursor: pointer;
+    &:hover{
+        color: rgb(0, 0, 135);
+        transition: all 40ms;
+        transform: scale(1.1);
+    }
+}
+
+.project-desc{
+    height: 100px;
+}
+
+.modal-modal-details{
+    height: 20rem;
+    width: 30rem;
+}
+
+#modal-modal-video{
+    width: 40rem;
+}
+
+.modal-modal-details{
+    padding: 1.5rem;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.close{
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    height: 2rem;
+    width: 1.9rem;
+    right: -0.5rem;
+    margin-top: -2.5rem;
+}
+
+.tech-stack{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.4rem;
+}
+
+.tech-logo{
+    padding: 0.5rem;
+    height: 2.5rem;
+    background-color: rgb(241, 241, 241);
+    margin-left: 2rem;
+    border: 1px solid gray;
+    border-radius: 2px;
+}

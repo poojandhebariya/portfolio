@@ -1,0 +1,159 @@
+/*
+.skill{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+}
+
+.skill-title p{
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.skill-box{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.skill-box p{
+    font-size: larger;
+}
+
+.left-skill{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right-skill{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.custom-progress .progress-bar {
+    border-radius: 2px;
+}
+
+.custom-progress1 .progress-bar {
+    background-color: #8000b3; 
+}
+
+.custom-progress2 .progress-bar{
+background-color: #003ac2; 
+}
+
+.custom-progress3 .progress-bar {
+background-color: #bd0000; 
+}
+
+.custom-progress4 .progress-bar{
+background-color: #008cb3;
+}
+
+.custom-progress5 .progress-bar{
+background-color: #3c9700; 
+}
+  
+
+.custom-progress1{
+    color: white;
+    text-align: end;
+    border-radius: 2px;
+    background-color: rgb(228, 228, 228);
+}
+
+.custom-progress2{
+    color: white;
+    text-align: end;
+    border-radius: 2px;
+    background-color: rgb(228, 228, 228);
+}
+
+.custom-progress3{
+    color: white;
+    text-align: end;
+    border-radius: 2px;
+    background-color: rgb(228, 228, 228);
+}
+
+.custom-progress4{
+    color: white;
+    text-align: end;
+    border-radius: 2px;
+    background-color: rgb(228, 228, 228);
+}
+
+.custom-progress5{
+    color: white;
+    text-align: end;
+    border-radius: 2px;
+    background-color: rgb(228, 228, 228);
+}
+
+.planning{
+    height: 7rem;
+    width: 7rem;
+}
+
+.circular-skill{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.CircularProgressbar{
+    font-size: small;
+}
+
+*/
+
+.skill{
+    margin-top: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 5.2rem;
+    /* background: linear-gradient(white,transparent,rgb(255, 255, 255)), url(../Assets/skill-bg.jpg); */
+    background-size: cover;
+    
+}
+
+.skill-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-box{
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 6rem;
+    width: max-content;
+    min-width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    background-color: white;
+    &:hover{
+        scale: 1.05;
+    }
+}
+
+.skill-img{
+    height: 4.5rem;
+    width: auto;
+}
