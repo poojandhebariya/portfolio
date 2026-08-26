@@ -1,6 +1,5 @@
 import { BsAmd } from "react-icons/bs";
 import { MdOutlineWebhook } from "react-icons/md";
-import backend from '../Assets/backend.png'
 import { FaCode } from "react-icons/fa";
 
 
