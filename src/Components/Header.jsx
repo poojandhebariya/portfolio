@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'services', label: 'Services' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "services", label: "Services" },
+  { id: "contact", label: "Contact" },
 ];
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -30,14 +30,14 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: "smooth" });
     }
     setMobileOpen(false);
   };
@@ -46,14 +46,14 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'glass border-b border-white/10 shadow-lg shadow-black/20'
-          : 'bg-transparent'
+          ? "glass border-b border-white/10 shadow-lg shadow-black/20"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <button
-          onClick={() => scrollToSection('home')}
+          onClick={() => scrollToSection("home")}
           className="group flex items-center gap-3"
         >
           <span className="text-white font-outfit font-bold text-xl group-hover:gradient-text transition-all duration-300">
@@ -69,8 +69,8 @@ const Header = () => {
               onClick={() => scrollToSection(item.id)}
               className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                 activeSection === item.id
-                  ? 'text-white'
-                  : 'text-slate-400 hover:text-white'
+                  ? "text-white"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               {activeSection === item.id && (
@@ -83,7 +83,7 @@ const Header = () => {
 
         {/* CTA button */}
         <button
-          onClick={() => scrollToSection('contact')}
+          onClick={() => scrollToSection("contact")}
           className="hidden md:flex items-center gap-2 px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 rounded-xl hover:from-violet-500 hover:to-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/30 hover:scale-105"
         >
           Hire Me
@@ -107,15 +107,15 @@ const Header = () => {
               onClick={() => scrollToSection(item.id)}
               className={`w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 ${
                 activeSection === item.id
-                  ? 'bg-violet-600/20 text-white border border-violet-500/30'
-                  : 'text-slate-400 hover:text-white hover:bg-white/5'
+                  ? "bg-violet-600/20 text-white border border-violet-500/30"
+                  : "text-slate-400 hover:text-white hover:bg-white/5"
               }`}
             >
               {item.label}
             </button>
           ))}
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => scrollToSection("contact")}
             className="mt-2 w-full px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 rounded-xl"
           >
             Hire Me

@@ -58,70 +58,79 @@ const StickyScrollReveal = ({ content }) => {
       if (!wrapper) return;
 
       const rect = wrapper.getBoundingClientRect();
-      const pinned = rect.top <= 0 && rect.bottom >= window.innerHeight;
+
+      const pinned = rect.top <= 1 && rect.bottom >= window.innerHeight - 1;
 
       if (!pinned) return;
 
       const goingDown = e.deltaY > 0;
       const current = activeIndexRef.current;
+
       const atStart = current === 0;
       const atEnd = current === content.length - 1;
 
+      /*
+       * At first/last project,
+       * allow normal browser scrolling.
+       */
       if ((goingDown && atEnd) || (!goingDown && atStart)) {
         return;
       }
 
-      e.preventDefault();
-
-      if (isSteppingRef.current) return;
+      /*
+       * Ignore additional wheel events
+       * while transition is running.
+       */
+      if (isSteppingRef.current) {
+        e.preventDefault();
+        return;
+      }
 
       const triggers = containerRef.current?.querySelectorAll(
         "[data-project-trigger]",
       );
 
-      const targetIndex = goingDown ? current + 1 : current - 1;
-      const targetEl = triggers?.[targetIndex];
+      if (!triggers) return;
 
-      if (!targetEl) return;
+      const targetIndex = goingDown ? current + 1 : current - 1;
+
+      const target = triggers[targetIndex];
+
+      if (!target) return;
+
+      e.preventDefault();
 
       /*
-       * Scroll by the EXACT distance to the next/previous
-       * trigger's boundary — never past it — so one wheel
-       * gesture can only ever move activeIndex by one.
+       * IMPORTANT:
+       * Use a different variable name here.
        */
+      const targetRect = target.getBoundingClientRect();
 
-      const targetRect = targetEl.getBoundingClientRect();
-      const centerY = window.innerHeight / 2;
+      const center = window.innerHeight / 2;
 
-      const delta = goingDown
-        ? targetRect.top - centerY
-        : targetRect.top + targetRect.height - centerY;
+      const targetCenter = targetRect.top + targetRect.height / 2;
+
+      const distance = targetCenter - center;
 
       isSteppingRef.current = true;
 
-      let settled = false;
+      window.scrollBy({
+        top: distance,
+        behavior: "smooth",
+      });
 
-      const release = () => {
-        if (settled) return;
-
-        settled = true;
+      setTimeout(() => {
         isSteppingRef.current = false;
-        window.removeEventListener("scrollend", release);
-      };
-
-      if ("onscrollend" in window) {
-        window.addEventListener("scrollend", release, { once: true });
-        setTimeout(release, 1200);
-      } else {
-        setTimeout(release, 700);
-      }
-
-      window.scrollBy({ top: delta, behavior: "smooth" });
+      }, 650);
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("wheel", handleWheel, {
+      passive: false,
+    });
 
-    return () => window.removeEventListener("wheel", handleWheel);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
   }, [content.length, prefersReducedMotion]);
 
   /*
@@ -409,7 +418,11 @@ const StickyScrollReveal = ({ content }) => {
 
                       {/* Tech */}
 
-                      {(item.s1 || item.s2) && (
+                      {(item.s1 ||
+                        item.s2 ||
+                        item.s3 ||
+                        item.s4 ||
+                        item.s5) && (
                         <div className="mt-6">
                           <p className="text-[9px] uppercase tracking-[0.2em] text-slate-600 mb-3">
                             Built With
@@ -430,6 +443,36 @@ const StickyScrollReveal = ({ content }) => {
                               <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
                                 <img
                                   src={item.s2}
+                                  alt="Technology"
+                                  className="w-full h-full object-contain"
+                                />
+                              </div>
+                            )}
+
+                            {item.s3 && (
+                              <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
+                                <img
+                                  src={item.s3}
+                                  alt="Technology"
+                                  className="w-full h-full object-contain"
+                                />
+                              </div>
+                            )}
+
+                            {item.s4 && (
+                              <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
+                                <img
+                                  src={item.s4}
+                                  alt="Technology"
+                                  className="w-full h-full object-contain"
+                                />
+                              </div>
+                            )}
+
+                            {item.s5 && (
+                              <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
+                                <img
+                                  src={item.s5}
                                   alt="Technology"
                                   className="w-full h-full object-contain"
                                 />
@@ -656,17 +699,13 @@ const StickyScrollReveal = ({ content }) => {
         =================================================== */}
 
         <div className="relative z-10">
-          {content.map((_, index) => {
-            const isLast = index === content.length - 1;
-
-            return (
-              <div
-                key={index}
-                data-project-trigger={index}
-                className={`pointer-events-none ${isLast ? "h-[25vh]" : "h-[45vh]"}`}
-              />
-            );
-          })}
+          {content.map((_, index) => (
+            <div
+              key={index}
+              data-project-trigger={index}
+              className="pointer-events-none h-[55vh]"
+            />
+          ))}
         </div>
       </div>
 
@@ -810,7 +849,7 @@ const MobileProject = ({ item, index, color }) => {
 
       {/* Tech */}
 
-      {(item.s1 || item.s2) && (
+      {(item.s1 || item.s2 || item.s3 || item.s4 || item.s5) && (
         <div className="mt-5 flex gap-2">
           {item.s1 && (
             <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
@@ -826,6 +865,36 @@ const MobileProject = ({ item, index, color }) => {
             <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
               <img
                 src={item.s2}
+                alt="Technology"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
+
+          {item.s3 && (
+            <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
+              <img
+                src={item.s3}
+                alt="Technology"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
+
+          {item.s4 && (
+            <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
+              <img
+                src={item.s4}
+                alt="Technology"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
+
+          {item.s5 && (
+            <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.08] p-1.5">
+              <img
+                src={item.s5}
                 alt="Technology"
                 className="w-full h-full object-contain"
               />

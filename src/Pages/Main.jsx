@@ -120,7 +120,7 @@ const Hero = () => {
           </div>
 
           {/* RIGHT: Photo */}
-          <div className="flex-1 flex justify-center items-center order-1 lg:order-2">
+          <div className="flex justify-center items-center order-1 lg:order-2">
             <div className="hero-animate animate-on-scroll relative">
               {/* Outer ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-600 via-blue-600 to-cyan-500 animate-spin-slow p-[3px] blur-[1px]" />
@@ -148,12 +148,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 animate-bounce">
-          <span className="text-xs font-medium">Scroll Down</span>
-          <FiArrowDown size={18} />
         </div>
       </div>
     </section>

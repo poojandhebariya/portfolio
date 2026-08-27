@@ -14,9 +14,6 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center text-white font-bold text-xs">
-            PD
-          </div>
           <span className="text-white font-outfit font-bold text-base">Poojan Dhebariya</span>
         </div>
 

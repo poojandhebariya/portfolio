@@ -1,10 +1,23 @@
-import React, { useEffect, useRef } from 'react';
-import { Skillcard } from '../Data/Skillcard';
+import React, { useEffect, useRef } from "react";
+import { Skillcard } from "../Data/Skillcard";
 
 const skillNames = [
-  'C++', 'Cloudinary', 'CSS3', 'EmailJS', 'Express.js',
-  'HTML5', 'JavaScript', 'JWT', 'MongoDB', 'React',
-  'Node.js', 'Razorpay', 'Streamlit', 'Tailwind CSS', 'Postman'
+  "C++",
+  "Cloudinary",
+  "CSS3",
+  "EmailJS",
+  "Express.js",
+  "HTML5",
+  "JavaScript",
+  "JWT",
+  "MongoDB",
+  "React",
+  "Node.js",
+  "Razorpay",
+  "Streamlit",
+  "Tailwind CSS",
+  "Postman",
+  "Webflow",
 ];
 
 const Skills = () => {
@@ -15,24 +28,28 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll('.skill-card');
+            const cards = entry.target.querySelectorAll(".skill-card");
             cards.forEach((card, i) => {
               setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0) scale(1)';
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0) scale(1)";
               }, i * 60);
             });
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="section-padding bg-dark-900 relative overflow-hidden">
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="section-padding bg-dark-900 relative overflow-hidden"
+    >
       {/* BG */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/5 rounded-full blur-3xl pointer-events-none" />
@@ -40,7 +57,9 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-violet-400 mb-3">My Arsenal</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-violet-400 mb-3">
+            My Arsenal
+          </p>
           <h2 className="text-4xl lg:text-5xl font-outfit font-bold">
             <span className="text-white">Technical </span>
             <span className="gradient-text">Skills</span>
@@ -59,8 +78,9 @@ const Skills = () => {
               className="skill-card group flex flex-col items-center gap-3 glass border border-white/8 rounded-2xl p-4 cursor-default transition-all duration-500 hover:border-violet-500/40 hover:bg-violet-500/5 hover:shadow-lg hover:shadow-violet-500/10 hover:scale-110 hover:-translate-y-1"
               style={{
                 opacity: 0,
-                transform: 'translateY(20px) scale(0.9)',
-                transition: 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease',
+                transform: "translateY(20px) scale(0.9)",
+                transition:
+                  "opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease",
               }}
             >
               <div className="w-12 h-12 flex items-center justify-center">
