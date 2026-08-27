@@ -1,20 +1,23 @@
-import React, { useEffect, useRef } from 'react';
-import Typewriter from 'typewriter-effect';
-import { FiDownload, FiFileText, FiArrowDown } from 'react-icons/fi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import photo from '../Assets/photo.png';
-import samplePDF1 from '../Assets/Poojan_Dhebariya_CV.pdf';
+import React, { useEffect, useRef } from "react";
+import Typewriter from "typewriter-effect";
+import { FiDownload, FiFileText } from "react-icons/fi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import photo from "../Assets/photo.png";
+import samplePDF1 from "../Assets/Poojan_Dhebariya_CV.pdf";
 
 const Hero = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
     // Animate elements on mount
-    const elements = heroRef.current?.querySelectorAll('.hero-animate');
+    const elements = heroRef.current?.querySelectorAll(".hero-animate");
     elements?.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, 200 + i * 150);
+      setTimeout(
+        () => {
+          el.classList.add("visible");
+        },
+        200 + i * 150,
+      );
     });
   }, []);
 
@@ -34,10 +37,8 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-
           {/* LEFT: Text Content */}
           <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
-
             {/* Greeting */}
             <p className="hero-animate animate-on-scroll text-slate-400 text-lg font-outfit font-medium mb-2">
               Hello, it's Me 👋
@@ -45,8 +46,7 @@ const Hero = () => {
 
             {/* Name */}
             <h1 className="hero-animate animate-on-scroll text-5xl lg:text-7xl font-outfit font-extrabold text-white leading-tight mb-4">
-              Poojan{' '}
-              <span className="gradient-text">Dhebariya</span>
+              Poojan <span className="gradient-text">Dhebariya</span>
             </h1>
 
             {/* Typewriter */}
@@ -56,13 +56,19 @@ const Hero = () => {
                 loop={Infinity}
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString('<span style="color:#8b5cf6">Frontend Developer</span>')
+                    .typeString(
+                      '<span style="color:#8b5cf6">Frontend Developer</span>',
+                    )
                     .pauseFor(1500)
                     .deleteAll()
-                    .typeString('<span style="color:#3b82f6">Backend Developer</span>')
+                    .typeString(
+                      '<span style="color:#3b82f6">Backend Developer</span>',
+                    )
                     .pauseFor(1500)
                     .deleteAll()
-                    .typeString('<span style="color:#06b6d4">Full Stack Developer</span>')
+                    .typeString(
+                      '<span style="color:#06b6d4">Full Stack Developer</span>',
+                    )
                     .pauseFor(1500)
                     .deleteAll()
                     .start();
@@ -72,8 +78,9 @@ const Hero = () => {
 
             {/* Description */}
             <p className="hero-animate animate-on-scroll text-slate-400 text-base leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10">
-              Passionate web developer crafting captivating digital experiences. 
-              Specializing in modern frontend architectures and scalable backend solutions.
+              Passionate web developer crafting captivating digital experiences.
+              Specializing in modern frontend architectures and scalable backend
+              solutions.
             </p>
 
             {/* CTA Buttons */}
